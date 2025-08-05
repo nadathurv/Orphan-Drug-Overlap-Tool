@@ -1,14 +1,14 @@
 # Drug Overlap Analysis Pipeline
 
-A production-ready system for identifying overlapping pharmaceutical drugs between regulatory databases using advanced fuzzy matching algorithms and pharmaceutical domain intelligence.
+A system for identifying overlapping pharmaceutical drugs between regulatory databases using fuzzy matching algorithms and pharma domain intelligence.
 
 ## Project Overview
 
-This pipeline analyzes drug approval data from multiple regulatory agencies to identify overlapping drugs that may have different names, formulations, or approval indications across jurisdictions. The primary use case compares India's CDSCO (Central Drugs Standard Control Organisation) database against the FDA's orphan drug database to understand regulatory overlap and identify market opportunities.
+This pipeline is prepared to analyze drug databases from multiple regulatory agencies to identify overlapping drugs that may have different names, formulations, or approval indications across jurisdictions. The primary use case compares India's CDSCO (Central Drugs Standard Control Organisation) database against the FDA's (approved) orphan drug database to understand regulatory overlap and identify market opportunities.
 
-The system addresses a fundamental challenge in pharmaceutical analysis: the same drug may appear with different names, salt forms, or combination formulations across databases, making simple string matching inadequate. Our approach uses sophisticated natural language processing and domain-specific pharmaceutical knowledge to achieve >99% precision in drug matching.
+The system addresses a fundamental challenge in pharmaceutical analysis: the same drug may appear with different names, salt forms, or combination formulations across databases, making simple string matching inadequate. Our approach uses NLP techniques to solve this.
 
-## Technical Architecture
+## Architecture
 
 ### Data Sources
 
@@ -26,7 +26,7 @@ The pipeline processes two primary datasets:
 - Originally in Excel format, converted to CSV during preprocessing
 - Example: Generic "azacitidine", Trade "Vidaza"
 
-### Core Pipeline Components
+### Pipeline Components
 
 **Data Loader Module** (`pipeline/data_loader.py`):
 Handles data ingestion and preprocessing. The `normalize_drug_name()` function implements pharmaceutical name standardization by removing common variations that don't affect drug identity:
