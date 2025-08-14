@@ -230,23 +230,6 @@ python experiments/random_sampling_test.py
 - Progress reporting: Every 500 drugs processed
 - Early termination: Matches below 70% similarity rejected immediately
 
-## Future Enhancements
-
-**Database Expansion**:
-- European Medicines Agency (EMA) database integration
-- Japan PMDA regulatory data
-- Additional country-specific databases
-
-**Algorithm Improvements**:
-- Machine learning models for indication similarity
-- Chemical structure-based matching for complex molecules
-- Automated therapeutic class classification
-
-**User Interface**:
-- Web-based results exploration
-- Interactive match validation tools
-- Automated report generation with visualizations
-
 ## Technical Requirements
 
 - Python 3.8+
