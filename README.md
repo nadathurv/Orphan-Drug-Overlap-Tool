@@ -103,33 +103,6 @@ Coordinates the entire matching process:
 - **Indication Verification**: Dynamic thresholds based on name similarity confidence
 - **Match Type Tracking**: Exact, salt variant, combination, or partial matches clearly labeled
 
-## Experimental Validation
-
-### Validation Methodology
-
-The system underwent rigorous statistical validation using a two-pronged approach to measure both precision (accuracy of matches found) and recall (completeness of match detection).
-
-**False Positive Detection**:
-Every pipeline output undergoes automated quality assessment using the `validate_matches.py` tool. The validator applies pharmaceutical domain knowledge to flag suspicious patterns:
-- Known false positive patterns (e.g., "urea" vs "hydroxyurea" - different drugs)
-- Drug class confusion (e.g., different fluoroquinolones)
-- Coincidental name matches with unrelated therapeutic uses
-
-**Confidence Scoring Logic**:
-- Score 100%: Always high confidence (same drug name = valid match)
-- Score 95-99%: High confidence unless known false pattern detected  
-- Score 90-94%: Medium confidence, manual review recommended
-- Score 85-89%: Low confidence, likely requires investigation
-
-The key insight: matches with different indications are valuable findings, not errors. The goal is finding the same drug across databases to observe regulatory differences, not finding drugs with identical uses.
-
-**False Negative Detection** (Future Implementation):
-The `random_sampling_test.py` implements stratified random sampling to identify missed matches:
-- Samples 150 unmatched CDSCO drugs (30% combinations, 70% singles)
-- Applies relaxed matching criteria (70% threshold vs 85% production)
-- Uses multiple search strategies: component-based, indication-based, comprehensive
-- Human validation of potential matches to calculate recall metrics
-
 ### Performance Metrics
 
 **Current Pipeline Results**:
